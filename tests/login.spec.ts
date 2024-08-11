@@ -6,7 +6,7 @@ test('Login test', async ({ page }) => {
     const homePage = new HomePage(page);
     const productsPage = new ProductsPage(page);
 
-    await homePage.navigateTo('https://saucedemo.com');
-    await homePage.fillLoginForm();
+    await homePage.navigateTo('https://www.saucedemo.com');
+    await homePage.fillLoginForm('standard_user','secret_sauce');
     await productsPage.isAtThisPage();
 } );

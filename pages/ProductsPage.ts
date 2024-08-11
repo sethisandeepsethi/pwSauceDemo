@@ -1,11 +1,11 @@
 import { expect, Locator, Page } from '@playwright/test';
+import BasePage from './BasePage';
 
-export class ProductsPage {
-    private readonly page:Page;
+export class ProductsPage extends BasePage{
     private readonly lbl_PageTitle: Locator;
 
     constructor (page: Page){
-        this.page = page;
+        super(page);
         this.lbl_PageTitle = page.locator('[data-test="title"]');
     }
 

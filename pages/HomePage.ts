@@ -2,7 +2,6 @@ import { Page, Locator, expect} from '@playwright/test'
 import BasePage from './BasePage'
 
 export class HomePage extends BasePage{
-    //private readonly page:Page
     private readonly userNameTextBox: Locator
     private readonly passwordTextBox: Locator
     private readonly loginButton: Locator
@@ -20,9 +19,9 @@ export class HomePage extends BasePage{
         await expect(this.shopLabel).toContainText('Swag Labs');
     }
 
-    async fillLoginForm() {
-        await this.fillFormField(this.userNameTextBox, 'standard_user')
-        await this.fillFormField(this.passwordTextBox, 'secret_sauce')
+    async fillLoginForm(userName:string, password:string) {
+        await this.fillFormField(this.userNameTextBox, userName)
+        await this.fillFormField(this.passwordTextBox, password)
         await this.clickElement(this.loginButton);
     }
 }
