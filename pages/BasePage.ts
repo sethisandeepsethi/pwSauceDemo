@@ -8,7 +8,8 @@ export default class BasePage {
     }
 
     async navigateTo(url: string) {
-        await this.page.goto(url);
+        await this.page.goto(url, { waitUntil: "networkidle", timeout: 10000 });
+        await this.page.waitForLoadState('networkidle');
     }
 
     async clickElement(element: Locator) {
@@ -20,7 +21,7 @@ export default class BasePage {
     }
 
     async getElementText(element: Locator): Promise<string> {
-        return element.innerText();
+        return await element.innerText();
     }
 
     async waitForElementVisible(element: Locator | string) {
