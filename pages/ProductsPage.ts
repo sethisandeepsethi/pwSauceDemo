@@ -37,4 +37,9 @@ export class ProductsPage extends BasePage{
         return await this.getElementText(this.lbl_ShoppingCartItemCountBadge);
     }
 
+    async gotoCartPage(){
+        await this.waitForElementVisible(this.lbl_ShoppingCartItemCountBadge);
+        await this.lbl_ShoppingCartItemCountBadge.click()
+    }
+
 }
