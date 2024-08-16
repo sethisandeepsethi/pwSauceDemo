@@ -10,7 +10,7 @@ const myFixture = test.extend({
 
 myFixture.use(
     {
-        headless: false,
+        headless: true,
         launchOptions: {
             channel: 'chrome',
             slowMo: 50
