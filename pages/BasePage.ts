@@ -8,6 +8,7 @@ export default class BasePage {
     }
 
     async navigateTo(url: string) {
+        await this.page.setDefaultNavigationTimeout(5000);
         await this.page.goto(url, { waitUntil: "networkidle", timeout: 10000 });
         await this.page.waitForLoadState('networkidle');
     }

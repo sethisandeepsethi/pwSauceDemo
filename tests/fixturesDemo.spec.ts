@@ -18,7 +18,7 @@ myFixture.use(
     }
 )
 
-myFixture.describe.skip('Custom fixtures demo', () => {
+myFixture.describe('Custom fixtures demo', () => {
 
     //Fixtures Object not used so no console messages
     myFixture('Demo without calling myObj', async ({ page }) => {
