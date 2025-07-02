@@ -5,6 +5,7 @@ import { CartPage } from '../pages/CartPage';
 import { CustomerInfoPage } from '../pages/CustomerInfoPage';
 import { OverviewPage } from '../pages/OverviewPage';
 import { CheckoutCompletePage } from '../pages/CheckoutCompletePage';
+import { Logger } from 'winston';
 
 type pages = {
     homePage: HomePage;
@@ -37,5 +38,10 @@ const testPages = baseTest.extend<pages>({
 
 });
 
+
 export const test = testPages;
 export const expect =  testPages.expect;
+export const fixtures = {
+    // @ts-ignore
+    logger: undefined as unknown as Logger
+}

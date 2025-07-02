@@ -1,4 +1,5 @@
 import { Locator, Page } from "@playwright/test";
+import { fixtures } from "../fixtures/pomFixture";
 
 export default class BasePage {
     readonly page: Page;
@@ -11,6 +12,7 @@ export default class BasePage {
         await this.page.setDefaultNavigationTimeout(5000);
         await this.page.goto(url, { waitUntil: "networkidle", timeout: 10000 });
         await this.page.waitForLoadState('networkidle');
+        fixtures.logger.info(`Navigating to URL: ${url} with waitForLoadState = networkidle`)
     }
 
     async clickElement(element: Locator) {
