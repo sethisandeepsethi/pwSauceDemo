@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "clean:reports": "rm -rf allure-report allure-results AxeHtmlReports playwright-report test-results && mkdir -p allure-report allure-results",
+    "clean:reports": "rm -rf allure-report allure-results AxeHtmlReports && mkdir -p allure-report allure-results",
     "clean:reportsInWindows": "rimraf allure-report allure-results && mkdirp allure-report allure-results",
     "generate:reports": "npx allure generate ./allure-results --clean",
     "open:reports": "npx allure open ./allure-report",
@@ -24,7 +24,6 @@
     "allure-playwright": "^3.0.0-beta.10",
     "axe-html-reporter": "^2.2.11",
     "mkdirp": "^3.0.1",
-    "rimraf": "^6.0.1",
-    "winston": "^3.15.0"
+    "rimraf": "^6.0.1"
   }
 }
