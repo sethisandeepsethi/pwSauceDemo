@@ -12,7 +12,6 @@ myFixture.use(
     {
         headless: true,
         launchOptions: {
-            channel: 'chrome',
             slowMo: 50
         }
     }

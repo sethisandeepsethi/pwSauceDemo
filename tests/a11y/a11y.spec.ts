@@ -2,7 +2,7 @@ import { expect, test } from "@playwright/test";
 import { AxeBuilder } from '@axe-core/playwright'
 import { createHtmlReport} from 'axe-html-reporter'
 
-test.only('Test a11y of Sauce demo site', async ({ page }, testInfo) => {
+test('Test a11y of Sauce demo site', async ({ page }, testInfo) => {
     await page.goto('https://www.saucedemo.com');
     await page.waitForLoadState('load');
 

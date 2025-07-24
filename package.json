@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "clean:reports": "rm -rf allure-report allure-results AxeHtmlReports && mkdir -p allure-report allure-results",
+    "clean:reports": "rm -rf allure-report allure-results AxeHtmlReports playwright-report test-results && mkdir -p allure-report allure-results",
     "clean:reportsInWindows": "rimraf allure-report allure-results && mkdirp allure-report allure-results",
     "generate:reports": "npx allure generate ./allure-results --clean",
     "open:reports": "npx allure open ./allure-report",
